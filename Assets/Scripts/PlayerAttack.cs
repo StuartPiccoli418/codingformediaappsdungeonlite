@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Interaction Settings")]
-    public float interactionRange = 2f;
+    public float interactionRange = 6f;
 
     void Update()
     {

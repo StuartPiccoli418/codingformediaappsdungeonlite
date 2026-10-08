@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class UpgradeStation : MonoBehaviour
 {
-    public enum UpgradeType { MaxHealth, VampiricLeech }
+    public enum UpgradeType { MaxHealth, VampiricLeech, AttackPower }
 
     [Header("Shop Configuration")]
     public UpgradeType upgradeType;
@@ -100,6 +100,10 @@ public class UpgradeStation : MonoBehaviour
                     Debug.Log("SUCCESS: Purchased Vampiric Leech! You now heal on hazard kills.");
                     Destroy(gameObject);
                     break;
+
+                case UpgradeType.AttackPower:
+                    GameManager.Instance.playerGold -= upgradeCost;
+                    GameManager.Instance.extraAttackPower += 1;
             }
         }
         else
