@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Interaction Settings")]
@@ -29,7 +30,8 @@ public class PlayerAttack : MonoBehaviour
             {
                 // Deal damage to the hazard when 'E' is pressed nearby
                 hazard.TakeDamage(1);
-                
+                Debug.Log($"Enemy is hit");
+
                 // Optional: break after hitting one target per keypress, or hit all in range
                 break; 
             }

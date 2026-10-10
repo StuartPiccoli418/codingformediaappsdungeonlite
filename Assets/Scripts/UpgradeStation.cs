@@ -10,6 +10,7 @@ public class UpgradeStation : MonoBehaviour
     public UpgradeType upgradeType;
     public int upgradeCost = 50;
     public string upgradeName = "Health Boost (+25 HP)";
+    public int damage = 1;
 
     [Header("Interaction Settings")]
     public float interactionDistance = 3.0f;
@@ -103,7 +104,11 @@ public class UpgradeStation : MonoBehaviour
 
                 case UpgradeType.AttackPower:
                     GameManager.Instance.playerGold -= upgradeCost;
-                    GameManager.Instance.extraAttackPower += 1;
+                    GameManager.Instance.ExtraAttackPower += 1;
+                    damage = damage + 1;
+                    Debug.Log($"SUCCESS: Purchased Extra Attack! New Total Max: {GameManager.Instance.ExtraAttackPower + 1}");
+                    Destroy(gameObject);
+                    break;
             }
         }
         else
