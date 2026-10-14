@@ -36,7 +36,6 @@ public class Hazard : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerHealth>()?.TakeDamage(damage);
-            Destroy(gameObject);
         }
     }
 
