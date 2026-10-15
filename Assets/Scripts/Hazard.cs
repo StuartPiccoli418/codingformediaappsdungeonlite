@@ -72,10 +72,10 @@ public class Hazard : MonoBehaviour
             // --------------------------------------
 
             // Visual Effect on Death
-            if (hitEffectPrefab != null)
-            {
-                Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
-            }
+            //if (hitEffectPrefab != null)
+           // {
+                //Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+           // }
 
             // Spawn coin loot
             if (goldCoinPrefab != null)
