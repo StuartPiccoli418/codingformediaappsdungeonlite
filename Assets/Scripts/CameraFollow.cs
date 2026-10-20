@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
 
     [Tooltip("The offset distance of the camera relative to the player.")]
-    public Vector3 offset = new Vector3(0, 12, -8);
+    public Vector3 offset = new Vector3(0, 12, 0);
 
     void LateUpdate()
     {

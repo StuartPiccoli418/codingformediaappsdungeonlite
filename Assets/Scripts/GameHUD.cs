@@ -5,6 +5,7 @@ public class GameHUD : MonoBehaviour
 {
     [Header("UI References")]
     public TextMeshProUGUI goldText;
+    public TextMeshProUGUI Attack_Power;
 
     void Update()
     {
@@ -13,5 +14,10 @@ public class GameHUD : MonoBehaviour
         {
             goldText.text = "Gold: " + GameManager.Instance.playerGold;
         }
+        if (GameManager.Instance != null)
+        {
+            Attack_Power.text =  "Attack_Power " + GameManager.Instance.ExtraAttackPower;
+        }
+
     }
 }

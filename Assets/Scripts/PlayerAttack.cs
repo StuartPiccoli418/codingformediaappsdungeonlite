@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
     // Optional: Draw a wire sphere in the editor so you can see your interaction range
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
 }

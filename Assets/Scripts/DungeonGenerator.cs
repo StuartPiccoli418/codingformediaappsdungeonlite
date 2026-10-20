@@ -27,6 +27,9 @@ public class DungeonGenerator : MonoBehaviour
         roomQueue.Enqueue(RoomType.Safe);
         roomQueue.Enqueue(RoomType.Danger);
         roomQueue.Enqueue(RoomType.Safe);
+        roomQueue.Enqueue(RoomType.Danger);
+        roomQueue.Enqueue(RoomType.Danger);
+        roomQueue.Enqueue(RoomType.Boss);
         roomQueue.Enqueue(RoomType.Boss);
         roomQueue.Enqueue(RoomType.Treasure);
 

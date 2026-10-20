@@ -19,6 +19,8 @@ public class UpgradeStation : MonoBehaviour
     private Transform playerTransform;
     private bool hasNotifiedPlayer = false;
 
+    public static object Instance { get; internal set; }
+
     void Start()
     {
         FindPlayer();
