@@ -9,7 +9,7 @@ public class UpgradeStation : MonoBehaviour
     [Header("Shop Configuration")]
     public UpgradeType upgradeType;
     public int upgradeCost = 50;
-    public string upgradeName = "Health Boost (+25 HP)";
+    public string upgradeName = "Health Boost (+10 HP)";
 
     [Header("Interaction Settings")]
     public float interactionDistance = 3.0f;
@@ -75,13 +75,13 @@ public class UpgradeStation : MonoBehaviour
             {
                 case UpgradeType.MaxHealth:
                     GameManager.Instance.playerGold -= upgradeCost;
-                    GameManager.Instance.extraMaxHealthPurchased += 25; // Safely stored in persistent GameManager
+                    GameManager.Instance.extraMaxHealthPurchased += 10; // Safely stored in persistent GameManager
 
                     // Instantly apply it to the current player if they are right there
                     if (playerHealth != null)
                     {
                         playerHealth.maxHealth = playerHealth.baseMaxHealth + GameManager.Instance.extraMaxHealthPurchased;
-                        playerHealth.currentHealth += 25; // Heal them for the bonus amount
+                        playerHealth.currentHealth += 10; // Heal them for the bonus amount
                     }
 
                     Debug.Log($"SUCCESS: Purchased Max Health! New Total Max: {GameManager.Instance.extraMaxHealthPurchased + 100}");

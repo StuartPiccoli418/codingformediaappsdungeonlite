@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
   speed: 1
-  damage: 1
+  damage: 4
   health: 5
   hitEffectPrefab: {fileID: 1996079847172625715, guid: 84900e7f145c69e46a226f8dbd3156c5, type: 3}
   goldCoinPrefab: {fileID: 2676944655592103932, guid: a4dbd96bc6880c0459b1fc1b64ad748d, type: 3}

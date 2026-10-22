@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2959ea496ae8f4088af539bce7e196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
-  speed: 5
-  damage: 1
+  speed: 4.5
+  damage: 2
   health: 1
   hitEffectPrefab: {fileID: 1996079847172625715, guid: 84900e7f145c69e46a226f8dbd3156c5, type: 3}
   goldCoinPrefab: {fileID: 2676944655592103932, guid: a4dbd96bc6880c0459b1fc1b64ad748d, type: 3}
