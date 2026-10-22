@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 // Required namespace for Unity's new Input System
 using UnityEngine.InputSystem;
@@ -12,6 +13,7 @@ public class UpgradeStation : MonoBehaviour
     public string upgradeName = "Health Boost (+25 HP)";
     public int damage = 1;
     public float speed = 12f;
+    public TextMeshProUGUI Attack_Power;
 
     [Header("Interaction Settings")]
     public float interactionDistance = 3.0f;

@@ -6,14 +6,14 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
 
     [Tooltip("The offset distance of the camera relative to the player.")]
-    public Vector3 offset = new Vector3(0, 12, 0);
+    public Vector3 offset = new Vector3(0, 0, 10);
 
     void LateUpdate()
     {
         if (target != null)
         {
             // Keep the camera locked to the player's position plus the offset
-            transform.position = target.position + offset;
+            transform.position = target.position;
 
             // Optional: Make the camera look down at the player
             transform.LookAt(target);

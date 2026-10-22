@@ -206,7 +206,7 @@ MonoBehaviour:
   m_fontSize: 72
   m_fontSizeBase: 72
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -624,6 +624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameHUD
   goldText: {fileID: 597045319}
   Attack_Power: {fileID: 0}
+  damage: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1711,8 @@ MonoBehaviour:
   bossRoomPrefab: {fileID: 1063911297576008930, guid: 5a4a24754f82f46479048292909090f8, type: 3}
   treasureRoomPrefab: {fileID: 1063911297576008930, guid: 6e382295d37acc34dba4e79a8e232e06, type: 3}
   health: 2
+  minSpeed: 2
+  maxSpeed: 5
   roomSize: 20
 --- !u!4 &1433909076
 Transform:

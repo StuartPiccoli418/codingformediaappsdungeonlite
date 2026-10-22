@@ -349,6 +349,7 @@ MonoBehaviour:
   upgradeName: Vampiric Leech (steal enemy health)
   damage: 1
   speed: 12
+  Attack_Power: {fileID: 0}
   interactionDistance: 3
 --- !u!1 &1063911297576008930
 GameObject:
@@ -359,6 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4376793541021628029}
+  - component: {fileID: -8192521230779318932}
   m_Layer: 0
   m_Name: StartRoom
   m_TagString: Untagged
@@ -392,6 +394,18 @@ Transform:
   - {fileID: 2801088820290995089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8192521230779318932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063911297576008930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c06ace15d384b04fa8af634c2161e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Attack
 --- !u!1 &1632493550110350715
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +419,7 @@ GameObject:
   - component: {fileID: 8171751402294594042}
   - component: {fileID: 3391323935348603959}
   - component: {fileID: 4320382103203617055}
+  - component: {fileID: 6641260084167936557}
   m_Layer: 0
   m_Name: Upgrade_Attack
   m_TagString: Untagged
@@ -522,7 +537,20 @@ MonoBehaviour:
   upgradeName: Attack Power (+1 ATK)
   damage: 1
   speed: 12
+  Attack_Power: {fileID: 0}
   interactionDistance: 3
+--- !u!114 &6641260084167936557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632493550110350715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c06ace15d384b04fa8af634c2161e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1716332065949744443
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +681,7 @@ MonoBehaviour:
   upgradeName: Health Boost (+25 HP)
   damage: 1
   speed: 12
+  Attack_Power: {fileID: 0}
   interactionDistance: 3
 --- !u!1 &4658883200959052241
 GameObject:
@@ -1493,6 +1522,7 @@ MonoBehaviour:
   upgradeName: Speed Up
   damage: 1
   speed: 12
+  Attack_Power: {fileID: 0}
   interactionDistance: 3
 --- !u!1001 &9659113756309064
 PrefabInstance:

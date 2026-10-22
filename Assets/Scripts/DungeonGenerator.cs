@@ -10,6 +10,8 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject bossRoomPrefab;
     public GameObject treasureRoomPrefab;
     public int health = 2;
+    public float minSpeed = 2f;
+    public float maxSpeed = 5f;
 
     [Header("Generator Settings")]
     public float roomSize = 20f;
@@ -28,7 +30,7 @@ public class DungeonGenerator : MonoBehaviour
         roomQueue.Enqueue(RoomType.Danger);
         roomQueue.Enqueue(RoomType.Safe);
         roomQueue.Enqueue(RoomType.Danger);
-        roomQueue.Enqueue(RoomType.Danger);
+        roomQueue.Enqueue(RoomType.Safe);
         roomQueue.Enqueue(RoomType.Boss);
         roomQueue.Enqueue(RoomType.Boss);
         roomQueue.Enqueue(RoomType.Treasure);
@@ -59,7 +61,11 @@ public class DungeonGenerator : MonoBehaviour
             case RoomType.Treasure:
                 prefabToSpawn = treasureRoomPrefab;
                 health = health + 1;
+                minSpeed = minSpeed + 1f;
+                maxSpeed = maxSpeed + 5f;
                 Debug.Log($"Enemies health are now {health}");
+                Debug.Log($"Enemies min speed are now {minSpeed}");
+                Debug.Log($"Enemies max speed are now {maxSpeed}");
                 break;
         }
 
