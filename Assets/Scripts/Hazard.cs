@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Hazard : MonoBehaviour
 {
@@ -15,11 +16,14 @@ public class Hazard : MonoBehaviour
     public GameObject goldCoinPrefab;
 
     private Transform player;
+    private float accelerationRate = 2.0f;
+
 
     void Start()
     {
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         if (p != null) player = p.transform;
+
     }
 
     void Update()
@@ -28,6 +32,7 @@ public class Hazard : MonoBehaviour
         if (speed > 0 && player != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.Rotate(0f, 1f + accelerationRate, 0f, Space.Self);
         }
     }
 
