@@ -51,8 +51,7 @@ public class DungeonGenerator : MonoBehaviour
         switch (nextType)
         {
             case RoomType.Danger:
-                prefabToSpawn = dangerRoomPrefabs[
-                    Random.Range(0, dangerRoomPrefabs.Length)];
+                prefabToSpawn = dangerRoomPrefabs[Random.Range(0, dangerRoomPrefabs.Length)];
                 break;
             case RoomType.Safe:
                 prefabToSpawn = safeRoomPrefab;

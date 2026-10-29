@@ -153,6 +153,7 @@ Transform:
   - {fileID: 2865930240787808765}
   - {fileID: 2792493721059222192}
   - {fileID: 3090032609372577582}
+  - {fileID: 9019560499125449876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1200230742221269579
@@ -204,6 +205,59 @@ MonoBehaviour:
   baseHazardCount: 1
   minSpeed: 2
   maxSpeed: 5
+--- !u!1 &1807016441212028557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9019560499125449876}
+  - component: {fileID: 1814914994351150486}
+  m_Layer: 0
+  m_Name: TrapSpwaner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9019560499125449876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807016441212028557}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 0.1, z: 0.591}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4376793541021628029}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814914994351150486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807016441212028557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80ef7abdd4db254387a70a941cb8ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonGenerator
+  startRoomPrefab: {fileID: 0}
+  dangerRoomPrefabs: []
+  safeRoomPrefab: {fileID: 0}
+  bossRoomPrefab: {fileID: 0}
+  treasureRoomPrefab: {fileID: 0}
+  health: 2
+  minSpeed: 2
+  maxSpeed: 5
+  roomSize: 0
 --- !u!1 &2895370292906566928
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +381,7 @@ GameObject:
   - component: {fileID: 2865930240787808765}
   - component: {fileID: 2544315565081939824}
   - component: {fileID: 2655603895072017955}
+  - component: {fileID: 7702450693641274819}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -382,6 +437,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f93165f63ab134a906da1bccb2a579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomProgressTrigger
+--- !u!114 &7702450693641274819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798616229567649544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110dfc8e216c32f4fbb022acc7e64b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  cubePrefab: {fileID: 1063911297576008930, guid: bec3cea7b72b06d4fb0dd09739b4eb59, type: 3}
 --- !u!1 &5902004632795341717
 GameObject:
   m_ObjectHideFlags: 0

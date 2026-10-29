@@ -65,8 +65,7 @@ public class Hazard : MonoBehaviour
 
     private void Update()
     {
-        if (agent == null || !agent.enabled ||
-            !agent.isOnNavMesh)
+        if (agent == null || !agent.enabled || !agent.isOnNavMesh)
             return;
 
         agent.speed = speed;
@@ -74,8 +73,7 @@ public class Hazard : MonoBehaviour
 
         if (player != null)
         {
-            float distance = Vector3.Distance(
-                transform.position, player.position);
+            float distance = Vector3.Distance(transform.position, player.position);
 
             // Player is close enough to attack.
             if (distance <= attackRange)
@@ -84,25 +82,21 @@ public class Hazard : MonoBehaviour
                 agent.isStopped = true;
                 agent.ResetPath();
 
-                Vector3 lookDirection =
-                    player.position - transform.position;
+                Vector3 lookDirection = player.position - transform.position;
                 lookDirection.y = 0f;
 
                 if (lookDirection.sqrMagnitude > 0.001f)
                 {
-                    transform.rotation = Quaternion.LookRotation(
-                        lookDirection);
+                    transform.rotation = Quaternion.LookRotation(lookDirection);
                 }
 
                 if (attackTimer <= 0f)
                 {
-                    PlayerHealth playerHealth =
-                        player.GetComponent<PlayerHealth>();
+                    PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
 
                     if (playerHealth == null)
                     {
-                        playerHealth =
-                            player.GetComponentInParent<PlayerHealth>();
+                        playerHealth = player.GetComponentInParent<PlayerHealth>();
                     }
 
                     if (playerHealth != null)
@@ -112,8 +106,7 @@ public class Hazard : MonoBehaviour
                     }
                     else
                     {
-                        Debug.LogWarning(
-                            "PlayerHealth component not found on player.");
+                        Debug.LogWarning("PlayerHealth component not found on player.");
                     }
 
                     attackTimer = attackCooldown;
@@ -148,14 +141,11 @@ public class Hazard : MonoBehaviour
             return;
         }
 
-        if (!agent.pathPending && agent.hasPath &&
-            agent.remainingDistance <=
-            agent.stoppingDistance + 0.1f)
+        if (!agent.pathPending && agent.hasPath && agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
             agent.ResetPath();
             waiting = true;
-            waitTimer = Random.Range(
-                minWaitTime, maxWaitTime);
+            waitTimer = Random.Range(minWaitTime, maxWaitTime);
         }
         else if (!agent.pathPending && !agent.hasPath)
         {
@@ -166,21 +156,15 @@ public class Hazard : MonoBehaviour
 
     private void PickNewDestination()
     {
-        if (agent == null || !agent.enabled ||
-            !agent.isOnNavMesh)
+        if (agent == null || !agent.enabled || !agent.isOnNavMesh)
             return;
 
         for (int i = 0; i < 20; i++)
         {
             Vector3 randomPoint = transform.position +
-                new Vector3(
-                    Random.Range(-roamRadius, roamRadius),
-                    0f,
-                    Random.Range(-roamRadius, roamRadius));
+                new Vector3(Random.Range(-roamRadius, roamRadius), 0f, Random.Range(-roamRadius, roamRadius));
 
-            if (NavMesh.SamplePosition(
-                randomPoint, out NavMeshHit hit,
-                2f, agent.areaMask))
+            if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, 2f, agent.areaMask))
             {
                 NavMeshPath path = new NavMeshPath();
 
@@ -217,60 +201,44 @@ public class Hazard : MonoBehaviour
 
         if (hitEffectPrefab != null)
         {
-            Instantiate(
-                hitEffectPrefab,
-                transform.position,
-                Quaternion.identity);
+            Instantiate(hitEffectPrefab,transform.position, Quaternion.identity);
         }
 
         Debug.Log($"Enemy has {health} health left");
 
         if (health <= 0)
         {
-            if (GameManager.Instance != null &&
-                GameManager.Instance.hasVampiricUpgrades)
+            if (GameManager.Instance != null && GameManager.Instance.hasVampiricUpgrades)
             {
-                GameObject playerObject =
-                    GameObject.FindGameObjectWithTag("Player");
+                GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
 
                 if (playerObject != null)
                 {
-                    PlayerHealth playerHealth =
-                        playerObject.GetComponent<PlayerHealth>();
+                    PlayerHealth playerHealth = playerObject.GetComponent<PlayerHealth>();
 
                     if (playerHealth != null)
                     {
-                        playerHealth.HealPercent(
-                            GameManager.Instance.vampiricHealAmount);
+                        playerHealth.HealPercent(GameManager.Instance.vampiricHealAmount);
                     }
                 }
             }
 
             if (hitEffectPrefab != null)
             {
-                Instantiate(
-                    hitEffectPrefab,
-                    transform.position,
-                    Quaternion.identity);
+                Instantiate(hitEffectPrefab,transform.position,Quaternion.identity);
             }
 
             if (goldCoinPrefab != null)
             {
-                Vector3 spawnPos =
-                    transform.position + Vector3.up * 0.5f;
+                Vector3 spawnPos =transform.position + Vector3.up * 0.5f;
 
-                GameObject coin = Instantiate(
-                    goldCoinPrefab,
-                    spawnPos,
-                    Quaternion.Euler(90f, 0f, 0f));
+                GameObject coin = Instantiate(goldCoinPrefab, spawnPos,Quaternion.Euler(90f, 0f, 0f));
 
                 Rigidbody rb = coin.GetComponent<Rigidbody>();
 
                 if (rb != null)
                 {
-                    Vector3 randomForce =
-                        Random.insideUnitSphere * 2f +
-                        Vector3.up * 3f;
+                    Vector3 randomForce =Random.insideUnitSphere * 2f + Vector3.up * 3f;
 
                     rb.AddForce(randomForce, ForceMode.Impulse);
                 }
