@@ -40,6 +40,7 @@ public class DungeonGenerator : MonoBehaviour
         nextSpawnPos += new Vector3(0, 0, roomSize);
     }
 
+    
     public void SpawnNextRoomInSequence()
     {
         if (roomQueue.Count == 0) return;
@@ -50,7 +51,8 @@ public class DungeonGenerator : MonoBehaviour
         switch (nextType)
         {
             case RoomType.Danger:
-                prefabToSpawn = dangerRoomPrefabs[Random.Range(0, dangerRoomPrefabs.Length)];
+                prefabToSpawn = dangerRoomPrefabs[
+                    Random.Range(0, dangerRoomPrefabs.Length)];
                 break;
             case RoomType.Safe:
                 prefabToSpawn = safeRoomPrefab;
@@ -63,9 +65,6 @@ public class DungeonGenerator : MonoBehaviour
                 health = health + 1;
                 minSpeed = minSpeed + 1f;
                 maxSpeed = maxSpeed + 5f;
-                Debug.Log($"Enemies health are now {health}");
-                Debug.Log($"Enemies min speed are now {minSpeed}");
-                Debug.Log($"Enemies max speed are now {maxSpeed}");
                 break;
         }
 
@@ -74,5 +73,13 @@ public class DungeonGenerator : MonoBehaviour
             Instantiate(prefabToSpawn, nextSpawnPos, Quaternion.identity);
             nextSpawnPos += new Vector3(0, 0, roomSize);
         }
+    }
+    public void SpawnRoomsUpToPosition(Vector3 targetPosition)
+    {
+        while (roomQueue.Count > 0 && nextSpawnPos.z <= targetPosition.z)
+        {
+            SpawnNextRoomInSequence();
+        }
+        Debug.Log("Rooms spawned up to saved Z position: " + targetPosition.z);
     }
 }

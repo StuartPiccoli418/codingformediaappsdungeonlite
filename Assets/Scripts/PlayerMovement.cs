@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for the new Input System
 
@@ -7,6 +8,8 @@ public class SimplePlayerMovement : MonoBehaviour
     [Header("Movement Settings")]
     public float speed = 12f;
     private CharacterController controller;
+
+    public static SimplePlayerMovement Instance { get; private set; }
 
     void Start()
     {
@@ -33,4 +36,44 @@ public class SimplePlayerMovement : MonoBehaviour
         // Move the player
         controller.Move(move * speed * Time.deltaTime);
     }
+    private void Awake() {
+        Instance = this;
+        /*
+        string json = JsonUtility.ToJson(new SaveObject {
+            position = transform.position,
+        });
+        Debug.Log(Application.dataPath + "\n" + Application.persistentDataPath);  
+        File.WriteAllText(Application.dataPath + "/Saves/saveFile.sav" ,json);
+        */
+        /* string json = File.ReadAllText(Application.dataPath + "/Saves/saveFile.sav");
+        SaveObject saveObject = JsonUtility.FromJson<SaveObject>(json);
+        Debug.Log(saveObject.position);
+        */
+        
+    }
+
+    [System.Serializable]
+    public class SaveObject
+    {
+        public Vector3 position;
+    }
+
+    public SaveObject Save()
+    {
+        return new SaveObject
+        {
+            position = transform.position
+        };
+    }
+
+    public void Load(SaveObject saveObject)
+    {
+        CharacterController controller =
+            GetComponent<CharacterController>();
+
+        controller.enabled = false;
+        transform.position = saveObject.position;
+        controller.enabled = true;
+    }
+
 }
