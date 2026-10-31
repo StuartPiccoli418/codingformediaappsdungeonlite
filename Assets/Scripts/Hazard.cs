@@ -23,6 +23,8 @@ public class Hazard : MonoBehaviour
     public GameObject hitEffectPrefab;
     public GameObject goldCoinPrefab;
 
+    private PlayerHealth playerHealth;
+
     private NavMeshAgent agent;
     private Transform player;
 
@@ -52,8 +54,7 @@ public class Hazard : MonoBehaviour
         }
         else
         {
-            Debug.LogError(
-                "Hazard could not find an object tagged Player!");
+            Debug.LogError("Hazard could not find an object tagged Player!");
         }
     }
 
@@ -230,7 +231,7 @@ public class Hazard : MonoBehaviour
 
             if (goldCoinPrefab != null)
             {
-                Vector3 spawnPos =transform.position + Vector3.up * 0.5f;
+                Vector3 spawnPos = transform.position + Vector3.up * 0.5f;
 
                 GameObject coin = Instantiate(goldCoinPrefab, spawnPos,Quaternion.Euler(90f, 0f, 0f));
 

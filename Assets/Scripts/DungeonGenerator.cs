@@ -24,6 +24,7 @@ public class DungeonGenerator : MonoBehaviour
 
     void Start()
     {
+
         // 1. Build the exact sequence you want for this level loop
         roomQueue.Enqueue(RoomType.Danger);
         roomQueue.Enqueue(RoomType.Safe);
@@ -36,7 +37,7 @@ public class DungeonGenerator : MonoBehaviour
         roomQueue.Enqueue(RoomType.Treasure);
 
         // 2. Spawn the initial Start Room
-        Instantiate(startRoomPrefab, nextSpawnPos, Quaternion.identity);
+        Instantiate(original: startRoomPrefab, nextSpawnPos, Quaternion.identity);
         nextSpawnPos += new Vector3(0, 0, roomSize);
     }
 
