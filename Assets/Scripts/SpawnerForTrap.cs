@@ -125,11 +125,7 @@ public class Spawn : MonoBehaviour
                 // Spawn coin slightly above the ground
                 Vector3 spawnPosition = hit.point + Vector3.up * 0.1f + Vector3.forward * 10f;
 
-                GameObject coin = Instantiate(
-                    GoldCoin,
-                    spawnPosition,
-                    Quaternion.identity
-                );
+                GameObject coin = Instantiate(GoldCoin,spawnPosition,Quaternion.identity);
 
                 Debug.Log("Coin spawned on ground at: " + spawnPosition);
 
