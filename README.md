@@ -1,5 +1,7 @@
 Uses Windows 64-bit, Unity version 6000.3.25f1
 
+Microsoft Visual Studio 2026 was used for editing scripts 
+
 Tutorials used:
 
 MASSIVE Unity Save System Tutorial!: https://www.youtube.com/watch?v=MotmZgCod9A  
