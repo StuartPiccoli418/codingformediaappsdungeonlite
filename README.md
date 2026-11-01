@@ -1,3 +1,5 @@
+Uses Windows 64-bit, Unity version 6000.3.25f1
+
 Tutorials used:
 
 MASSIVE Unity Save System Tutorial!: https://www.youtube.com/watch?v=MotmZgCod9A  
