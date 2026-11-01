@@ -25,3 +25,5 @@ How to Fix Pink Assets from Unity Asset Store in Unity 6: https://www.youtube.co
 How to make something spin in Unity | Unity 3D tutorial: https://www.youtube.com/watch?v=K3Ap2_beGnE
 
 State Machine in Unity 3D - Tutorial for Beginners: https://www.youtube.com/watch?v=7QIcd6_TTys
+
+Create Obstacle - 3D Coin Collector Game in Unity Engine - Tutorial 07 https://www.youtube.com/watch?v=bcEs3cwPzD4
