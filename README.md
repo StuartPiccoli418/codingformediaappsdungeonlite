@@ -14,10 +14,10 @@ Placing and activating TRAPS in Unity 2020: https://www.youtube.com/watch?v=L2qJ
 
 Documentation/ScriptReference/Random.Range: https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Random.Range.html
 
-FULL 3D ENEMY AI in 6 MINUTES! || Unity Tutorial: www.youtube.com/feed/historyunity
+FULL 3D ENEMY AI in 6 MINUTES! || Unity Tutorial: https://www.youtube.com/watch?v=UjkSFoLxesw
 
-How to Fix Pink Assets from Unity Asset Store in Unity 6: www.youtube.com/feed/historyunity
+How to Fix Pink Assets from Unity Asset Store in Unity 6: https://www.youtube.com/watch?v=YLfcRwrER4A&t=322s
 
-How to make something spin in Unity | Unity 3D tutorial: www.youtube.com/feed/historyunity
+How to make something spin in Unity | Unity 3D tutorial: https://www.youtube.com/watch?v=K3Ap2_beGnE
 
-State Machine in Unity 3D - Tutorial for Beginners: www.youtube.com/feed/historyunity
+State Machine in Unity 3D - Tutorial for Beginners: https://www.youtube.com/watch?v=7QIcd6_TTys
