@@ -39,7 +39,7 @@ public class Attack : MonoBehaviour
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.ExtraAttackPower += ExtraAttackPower + 1;
-                Debug.Log("Attack Power is: " + GameManager.Instance.ExtraAttackPower + damage);
+                Debug.Log("Attack Power is: " + (GameManager.Instance.ExtraAttackPower + damage));
             }
 
             Destroy(gameObject);

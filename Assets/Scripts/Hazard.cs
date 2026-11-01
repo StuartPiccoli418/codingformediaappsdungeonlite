@@ -72,8 +72,7 @@ public class Hazard : MonoBehaviour
 
         agent.speed = speed;
 
-        GameObject playerObject =
-            GameObject.FindGameObjectWithTag("Player");
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
 
         if (playerObject != null)
         {
