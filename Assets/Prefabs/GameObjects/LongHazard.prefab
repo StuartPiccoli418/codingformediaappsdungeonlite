@@ -128,9 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2959ea496ae8f4088af539bce7e196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
-  speed: 3
+  speed: 4
   damage: 1
-  health: 1
+  health: 4
   detectionRange: 10
   attackRange: 2
   attackCooldown: 1
